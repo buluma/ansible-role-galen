@@ -1,10 +1,19 @@
 ---
-# This is an example playbook to execute Ansible tests.
-
 - name: Verify
   hosts: all
-  gather_facts: false
+  become: no
+  gather_facts: no
+
   tasks:
-  - name: Example assertion
-    ansible.builtin.assert:
-      that: true
+    - name: Test connection
+      ansible.builtin.ping:
+
+    - name: Try the package module
+      ansible.builtin.package:
+        name: gzip
+        state: present
+
+    - name: Try the galen version
+      ansible.builtin.command: |
+        galen -v
+      register: galenversion

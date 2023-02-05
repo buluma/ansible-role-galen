@@ -15,16 +15,22 @@
 - name: Galen | Ensure home directory exists
   file:
     path: "{{ galen_home_path }}"
-    owner: "{{ galen_owner }}"
-    group: "{{ galen_group }}"
+    # owner: "{{ galen_owner }}"
+    # group: "{{ galen_group }}"
     state: directory
+
+# - name: Create a directory if it does not exist
+#   ansible.builtin.file:
+#     path: "{{ galen_home_path }}"
+#     state: directory
+#     mode: '0755'
 
 - name: Galen | Unpack
   unarchive:
     src: "{{ galen_tmp }}"
     dest: "{{ galen_home_path }}"
-    owner: "{{ galen_owner }}"
-    group: "{{ galen_group }}"
+    # owner: "{{ galen_owner }}"
+    # group: "{{ galen_group }}"
     mode: "u=rwx,g=rx,o=rx"
     copy: no
 
@@ -32,6 +38,7 @@
   file:
     src: "{{ galen_home_path }}/galen-bin-{{ galen_version }}/galen"
     dest: "{{ galen_path }}"
-    owner: "{{ galen_owner }}"
-    group: "{{ galen_group }}"
+    # owner: "{{ galen_owner }}"
+    # group: "{{ galen_group }}"
     state: link
+    force: yes
