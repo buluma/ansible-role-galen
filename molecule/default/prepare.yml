@@ -1,0 +1,10 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - name: buluma.bootstrap
+    - name: buluma.git
+    - name: buluma.java
