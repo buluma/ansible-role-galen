@@ -1,38 +1,123 @@
-Role Name
-=========
+# [Ansible role galen](#galen)
 
-A brief description of the role goes here.
+Automated testing of look and feel for your responsive websites.
 
-Requirements
-------------
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-galen/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-galen/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-galen/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-galen)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/galen)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-galen.svg)](https://github.com/buluma/ansible-role-galen/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-galen.svg)](https://github.com/buluma/ansible-role-galen/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-galen.svg)](https://github.com/buluma/ansible-role-galen/pulls/)|
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## [Example Playbook](#example-playbook)
 
-Role Variables
---------------
+This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-galen/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+```yaml
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include buluma.galen"
+      include_role:
+        name: "buluma.galen"
+```
 
-Dependencies
-------------
+The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-galen/blob/master/molecule/default/prepare.yml):
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+```yaml
+---
+- name: Prepare
+  hosts: all
+  gather_facts: no
+  become: yes
 
-Example Playbook
-----------------
+  roles:
+    - name: buluma.bootstrap
+    - name: buluma.git
+    - name: buluma.java
+```
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+## [Role Variables](#role-variables)
 
-License
--------
+The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-galen/blob/master/defaults/main.yml):
 
-BSD
+```yaml
+---
+# defaults file for galen
 
-Author Information
-------------------
+galen_packages:
+  - unzip
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+galen_version: 2.4.4
+galen_url: "https://github.com/galenframework/galen/releases/download/galen-{{ galen_version }}/galen-bin-{{ galen_version }}.zip"
+galen_tmp: "/tmp/galen.zip"
+
+galen_path: /usr/bin/galen
+galen_home_path: /opt/galen
+# galen_home_path: "~/.galen"
+
+galen_owner: "{{ ansible_ssh_user }}"
+galen_group: "{{ ansible_ssh_user }}"
+```
+
+## [Requirements](#requirements)
+
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-galen/blob/master/requirements.txt).
+
+## [State of used roles](#state-of-used-roles)
+
+The following roles are used to prepare a system. You can prepare your system in another way.
+
+| Requirement | GitHub | GitLab |
+|-------------|--------|--------|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-bootstrap)|
+|[buluma.git](https://galaxy.ansible.com/buluma/git)|[![Build Status GitHub](https://github.com/buluma/ansible-role-git/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-git/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-git/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-git)|
+|[buluma.java](https://galaxy.ansible.com/buluma/java)|[![Build Status GitHub](https://github.com/buluma/ansible-role-java/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-java/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-java/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-java)|
+
+## [Context](#context)
+
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
+
+Here is an overview of related roles:
+
+![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-galen/png/requirements.png "Dependencies")
+
+## [Compatibility](#compatibility)
+
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
+
+|container|tags|
+|---------|----|
+|[Alpine](https://hub.docker.com/repository/docker/buluma/alpine/general)|all|
+|[Amazon](https://hub.docker.com/repository/docker/buluma/amazonlinux/general)|Candidate|
+|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|all|
+|[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
+|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
+|[opensuse](https://hub.docker.com/repository/docker/buluma/opensuse/general)|all|
+|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
+
+The minimum version of Ansible required is 2.10, tests have been done to:
+
+- The previous version.
+- The current version.
+- The development version.
+
+If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-galen/issues)
+
+## [Changelog](#changelog)
+
+[Role History](https://github.com/buluma/ansible-role-galen/blob/master/CHANGELOG.md)
+
+## [License](#license)
+
+[Apache-2.0](https://github.com/buluma/ansible-role-galen/blob/master/LICENSE).
+
+## [Author Information](#author-information)
+
+[buluma](https://buluma.github.io/)
+
+Please consider [sponsoring me](https://github.com/sponsors/buluma).
+
+### [Special Thanks](#special-thanks)
+
+Template inspired by [Robert de Bock](https://github.com/robertdebock)

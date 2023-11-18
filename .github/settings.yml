@@ -3,6 +3,6 @@
 # Ansible managed
 #
 repository:
-  description: Prepare your system to be managed by Ansible.
+  description: Automated testing of look and feel for your responsive websites.
   homepage: https://buluma.github.io/
-  topics: bootstrap, python, sudo, ansible, molecule, tox, playbook, hacktoberfest
+  topics: galen, python, sudo, ansible, molecule, tox, playbook
