@@ -1,10 +1,10 @@
-# [Ansible role galen](#galen)
+# Ansible role [galen](https://galaxy.ansible.com/ui/standalone/roles/buluma/galen/documentation)
 
 Automated testing of look and feel for your responsive websites.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-galen/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-galen/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-galen.svg)](https://github.com/buluma/ansible-role-galen/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-galen.svg)](https://github.com/buluma/ansible-role-galen/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-galen.svg)](https://github.com/buluma/ansible-role-galen/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-galen/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-galen/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-galen.svg)](https://github.com/buluma/ansible-role-galen/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-galen.svg)](https://github.com/buluma/ansible-role-galen/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-galen.svg)](https://github.com/buluma/ansible-role-galen/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/galen)](https://galaxy.ansible.com/ui/standalone/roles/buluma/galen/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -110,13 +110,11 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/buluma/ansible-role-galen/blob/master/LICENSE).
+[Apache-2.0](https://github.com/buluma/ansible-role-galen/blob/master/LICENSE)
 
 ## [Author Information](#author-information)
 
-[buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)
