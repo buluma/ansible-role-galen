@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-galen/tree/HEAD)
+## [v0.1.0](https://github.com/buluma/ansible-role-galen/tree/v0.1.0) (2023-12-24)
 
-[Full Changelog](https://github.com/buluma/ansible-role-galen/compare/5b44cf19a0620c61eddf9c1ffba7e682179df442...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-galen/compare/5b44cf19a0620c61eddf9c1ffba7e682179df442...v0.1.0)
 
 **Merged pull requests:**
 
