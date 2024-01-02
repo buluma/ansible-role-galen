@@ -16,7 +16,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   hosts: all
   tasks:
     - name: "Include buluma.galen"
-      include_role:
+      ansible.builtin.include_role:
         name: "buluma.galen"
 ```
 
@@ -116,5 +116,3 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 [Shadow Walker](https://buluma.github.io/)
 
-
-Template inspired by [Robert de Bock](https://github.com/robertdebock)
