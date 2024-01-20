@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#9](https://github.com/buluma/ansible-role-galen/pull/9) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.5 to 1.0.8 [\#6](https://github.com/buluma/ansible-role-galen/pull/6) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/checkout from 3 to 4 [\#5](https://github.com/buluma/ansible-role-galen/pull/5) ([dependabot[bot]](https://github.com/apps/dependabot))
 
