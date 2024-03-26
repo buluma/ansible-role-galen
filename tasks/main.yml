@@ -32,7 +32,7 @@
     # owner: "{{ galen_owner }}"
     # group: "{{ galen_group }}"
     mode: "u=rwx,g=rx,o=rx"
-    copy: no
+    copy: false
 
 - name: Link
   ansible.builtin.file:
@@ -41,4 +41,4 @@
     # owner: "{{ galen_owner }}"
     # group: "{{ galen_group }}"
     state: link
-    force: yes
+    force: true
