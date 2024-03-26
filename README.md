@@ -26,8 +26,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  gather_facts: no
-  become: yes
+  gather_facts: false
+  become: true
 
   roles:
     - name: buluma.bootstrap
@@ -48,7 +48,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 galen_packages:
   - unzip
 
-galen_version: 2.4.4
+galen_version: "2.4.4"
 galen_url: "https://github.com/galenframework/galen/releases/download/galen-{{ galen_version }}/galen-bin-{{ galen_version }}.zip"
 galen_tmp: "/tmp/galen.zip"
 
