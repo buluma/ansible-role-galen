@@ -6,5 +6,3 @@
 
   roles:
     - name: buluma.bootstrap
-    - name: buluma.git
-    - name: buluma.java
