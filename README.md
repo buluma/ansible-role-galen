@@ -14,7 +14,20 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: all
+  become: true
+  gather_facts: true
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
   tasks:
+    - name: "Install Git"
+      ansible.builtin.include_role:
+        name: "buluma.git"
+    - name: "Install Java"
+      ansible.builtin.include_role:
+        name: "buluma.java"
+
     - name: "Include buluma.galen"
       ansible.builtin.include_role:
         name: "buluma.galen"
@@ -31,8 +44,6 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 
   roles:
     - name: buluma.bootstrap
-    - name: buluma.git
-    - name: buluma.java
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
