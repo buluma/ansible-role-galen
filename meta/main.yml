@@ -28,7 +28,9 @@ galaxy_info:
         - all
     - name: Ubuntu
       versions:
-        - all
+        - jammy
+        - lunar
+        - bionic
 
   galaxy_tags:
     - galen
