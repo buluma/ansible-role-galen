@@ -11,6 +11,7 @@
   ansible.builtin.get_url:
     url: "{{ galen_url }}"
     dest: "{{ galen_tmp }}"
+    mode: "0644"
 
 - name: Ensure home directory exists
   ansible.builtin.file:
@@ -18,6 +19,7 @@
     # owner: "{{ galen_owner }}"
     # group: "{{ galen_group }}"
     state: directory
+    mode: "0755"
 
 # - name: Create a directory if it does not exist
 #   ansible.builtin.file:
