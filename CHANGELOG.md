@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-galen/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-galen/compare/v24.3.31...HEAD)
+
+**Merged pull requests:**
+
+- Bump ansible/ansible-lint from 24.7.0 to 24.9.0 [\#16](https://github.com/buluma/ansible-role-galen/pull/16) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v24.3.31](https://github.com/buluma/ansible-role-galen/tree/v24.3.31) (2024-03-30)
 
 [Full Changelog](https://github.com/buluma/ansible-role-galen/compare/v0.3.0...v24.3.31)
