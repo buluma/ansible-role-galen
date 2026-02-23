@@ -1,20 +1,20 @@
 ---
-  - name: Converge
-    hosts: all
-    become: true
-    gather_facts: true
-    pre_tasks:
-      - name: Update apt cache.
-        apt: update_cache=true cache_valid_time=600
-        when: ansible_os_family == 'Debian'
-    tasks:
-      - name: "Install Git"
-        ansible.builtin.include_role:
-          name: "buluma.git"
-      - name: "Install Java"
-        ansible.builtin.include_role:
-          name: "buluma.java"
+- name: Converge
+  hosts: all
+  become: true
+  gather_facts: true
+  pre_tasks:
+  - name: Update apt cache.
+    apt: update_cache=true cache_valid_time=600
+    when: ansible_os_family == 'Debian'
+  tasks:
+  - name: "Install Git"
+    ansible.builtin.include_role:
+      name: "buluma.git"
+  - name: "Install Java"
+    ansible.builtin.include_role:
+      name: "buluma.java"
 
-      - name: "Include buluma.galen"
-        ansible.builtin.include_role:
-          name: "buluma.galen"
+  - name: "Include buluma.galen"
+    ansible.builtin.include_role:
+      name: "buluma.galen"

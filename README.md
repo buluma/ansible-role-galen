@@ -12,38 +12,38 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - name: Converge
-    hosts: all
-    become: true
-    gather_facts: true
-    pre_tasks:
-      - name: Update apt cache.
-        apt: update_cache=true cache_valid_time=600
-        when: ansible_os_family == 'Debian'
-    tasks:
-      - name: "Install Git"
-        ansible.builtin.include_role:
-          name: "buluma.git"
-      - name: "Install Java"
-        ansible.builtin.include_role:
-          name: "buluma.java"
+- name: Converge
+  hosts: all
+  become: true
+  gather_facts: true
+  pre_tasks:
+  - name: Update apt cache.
+    apt: update_cache=true cache_valid_time=600
+    when: ansible_os_family == 'Debian'
+  tasks:
+  - name: "Install Git"
+    ansible.builtin.include_role:
+      name: "buluma.git"
+  - name: "Install Java"
+    ansible.builtin.include_role:
+      name: "buluma.java"
 
-      - name: "Include buluma.galen"
-        ansible.builtin.include_role:
-          name: "buluma.galen"
+  - name: "Include buluma.galen"
+    ansible.builtin.include_role:
+      name: "buluma.galen"
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-galen/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - name: Prepare
-    hosts: all
-    gather_facts: false
-    become: true
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  become: true
 
-    roles:
-      - name: buluma.bootstrap
+  roles:
+  - name: buluma.bootstrap
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -57,7 +57,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # defaults file for galen
 
 galen_packages:
-  - unzip
+- unzip
 
 galen_version: "2.4.4"
 galen_url: "https://github.com/galenframework/galen/releases/download/galen-{{ galen_version
