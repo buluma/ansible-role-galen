@@ -5,15 +5,15 @@
   gather_facts: false
 
   tasks:
-  - name: Test connection
-    ansible.builtin.ping:
+    - name: Test connection
+      ansible.builtin.ping:
 
-  - name: Try the package module
-    ansible.builtin.package:
-      name: gzip
-      state: present
+    - name: Try the package module
+      ansible.builtin.package:
+        name: gzip
+        state: present
 
-  - name: Try the galen version
-    ansible.builtin.command: |
-      galen -v
-    register: galenversion
+    - name: Try the galen version
+      ansible.builtin.command: |
+        galen -v
+      register: galenversion

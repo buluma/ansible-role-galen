@@ -5,4 +5,4 @@
   become: true
 
   roles:
-  - name: buluma.bootstrap
+    - name: buluma.bootstrap
