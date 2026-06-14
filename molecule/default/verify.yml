@@ -17,3 +17,4 @@
       ansible.builtin.command: |
         galen -v
       register: galenversion
+      changed_when: false
